@@ -1,0 +1,18 @@
+<h1>Heroes <small>Dc y Marvel</small></h1> 
+<hr>
+Resultado para: "{{buscquedaname}}"<br> <br>
+
+<div *ngIf="heroes.length == 0" class="alert alert-danger" role="alert">
+    No se econtraron Resultados.
+</div>
+
+<div class="card-columns">
+    
+    <!-- Aqui traje un componente, y utilice input y outputs, los input son
+    entradas y los Outputs salidas, -->
+
+    <!-- Esos inputs y outputs vab dentro del ts de la etiqueta app-heroes-tarjetas -->
+    <app-heroe-tarjeta [hero]="hero" [index]="hero.idx" (heroreSelec)="verHeroe($event)"
+    *ngFor="let hero of heroes"></app-heroe-tarjeta>
+
+</div>
